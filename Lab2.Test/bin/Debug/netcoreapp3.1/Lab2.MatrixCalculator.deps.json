@@ -1,0 +1,26 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Lab2.MatrixCalculator/1.0.0": {
+        "dependencies": {
+          "Lab2.Test_old": "1.0.0"
+        },
+        "runtime": {
+          "Lab2.MatrixCalculator.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Lab2.MatrixCalculator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

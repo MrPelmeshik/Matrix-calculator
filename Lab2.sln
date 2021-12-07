@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2.MatrixCalculator", "Lab2.MatrixCalculator\Lab2.MatrixCalculator.csproj", "{ED50B0D1-6EEE-43FB-90DF-1E6722F67CA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2.Test", "Lab2.Test\Lab2.Test.csproj", "{DA9A8018-4963-490A-8C27-EE48E5DC334F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED50B0D1-6EEE-43FB-90DF-1E6722F67CA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED50B0D1-6EEE-43FB-90DF-1E6722F67CA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED50B0D1-6EEE-43FB-90DF-1E6722F67CA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED50B0D1-6EEE-43FB-90DF-1E6722F67CA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA9A8018-4963-490A-8C27-EE48E5DC334F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA9A8018-4963-490A-8C27-EE48E5DC334F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA9A8018-4963-490A-8C27-EE48E5DC334F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA9A8018-4963-490A-8C27-EE48E5DC334F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
