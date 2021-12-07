@@ -12,7 +12,7 @@ namespace Lab2.MatrixCalculator
 
             MatrixCalculator matrixCalculator = new MatrixCalculator();
             string[,] response;
-            
+
             string[] mathSeq = FileHandler.ReadFile("Calc1.txt");
 
             for (int i = 0; i < mathSeq.Length; i++)
