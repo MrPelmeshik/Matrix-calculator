@@ -36,12 +36,11 @@ namespace Lab2.MatrixCalculator
                         return MatrixHandler.ConvertMatrixIntToStr(result_m);
                     }
                 }
-                Console.Write("\nErrrrror");
                 return MatrixHandler.ConvertStrToMatrixStr(error);
             }
 
             // Послдений ввод это не операция
-            if (last_input is not (_equal and _operation))
+            if (last_input is _operation or '\0')
             {
                 // Попытка преобразовтаь в число
                 if (int.TryParse(value, out int num))
@@ -53,11 +52,7 @@ namespace Lab2.MatrixCalculator
                     last_input = _number;
                     return MatrixHandler.ConvertStrToMatrixStr(number.ToString());
                 }
-            }
-            
-            // Послдений ввод это не операция либо операция транспонирования
-            if (last_input is not (_equal and _operation))
-            {
+
                 // Попытка взять как матрицу
                 if (MatrixHandler.TryParseToMatrix(value, out int[,] tmp_m))
                 {
@@ -87,8 +82,8 @@ namespace Lab2.MatrixCalculator
                 // выполнить хранимую оперцию
                 switch (operation)
                 {
-                    case '\0' or _equal:
-                        // Отсутствие актуальных операций или равенство
+                    case '\0':
+                        // Отсутствие актуальных операций
                         break;
                     case '*':
                         if (number != null)

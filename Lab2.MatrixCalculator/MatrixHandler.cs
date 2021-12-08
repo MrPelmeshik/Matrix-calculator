@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace Lab2.MatrixCalculator
 {
@@ -25,9 +26,14 @@ namespace Lab2.MatrixCalculator
             {
                 line = FileHandler.ReadFile(value + ".txt");
             }
+            catch (FileNotFoundException)
+            {
+                Console.Write("\nError -> File not found! Check the variable in the file");
+                return false;
+            }
             catch (Exception e)
             {
-                //Console.WriteLine(e);
+                Console.Write("\nError -> error open file!");
                 return false;
             }
 
@@ -37,7 +43,7 @@ namespace Lab2.MatrixCalculator
             }
             catch (Exception e)
             {
-                //Console.WriteLine(e);
+                Console.Write("Error -> error file processing!");
                 return false;
             }
 
@@ -102,7 +108,8 @@ namespace Lab2.MatrixCalculator
                     }
                     else
                     {
-                        throw new Exception("Встречено не число");
+                        Console.Write("Error -> When processing a string, not a number was encountered!");
+                        throw new NotImplementedException();
                     }
                 }
             }
@@ -130,7 +137,10 @@ namespace Lab2.MatrixCalculator
             //сложени матриц
             if (m1.GetLength(0) != m2.GetLength(0) ||
                 m1.GetLength(1) != m2.GetLength(1))
-                throw new Exception("Матрицы нельзя сложить");
+            {
+                Console.Write("\nError -> Array summation error!");
+                throw new NotImplementedException();
+            }
 
             int[,] m3 = new int[m1.GetLength(0),m1.GetLength(1)];
 
@@ -149,8 +159,11 @@ namespace Lab2.MatrixCalculator
         {
             // произведение матрицы
             if (m1.GetLength(1) != m2.GetLength(0))
-                throw new Exception("Матрицы нельзя перемножить");
-            
+            {
+                Console.Write("\nError -> Array multiplication error!");
+                throw new NotImplementedException();
+            }
+
             int[,] m3 = new int[m1.GetLength(0), m2.GetLength(1)];
             for (int i = 0; i < m1.GetLength(0); i++)
             {
@@ -181,11 +194,6 @@ namespace Lab2.MatrixCalculator
             return m2;
         }
 
-        private static void Swap(ref int a, ref int b)
-        {
-            (a, b) = (b, a);
-        }
-
         private static int[,] ConvertStepArrToArr(int[][] m)
         {
             int size = m[0].Length;
@@ -193,7 +201,10 @@ namespace Lab2.MatrixCalculator
             for (int i = 0; i < m.Length; i++)
             {
                 if (size != m[i].Length)
-                    throw new Exception("Это ступенчатый массив");
+                {
+                    Console.Write("\nError -> Error converting a stepped array to an array!");
+                    throw new NotImplementedException();
+                }
 
                 for (int j = 0; j < m[i].Length; j++)
                 {
