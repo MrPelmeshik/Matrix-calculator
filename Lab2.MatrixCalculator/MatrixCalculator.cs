@@ -93,28 +93,48 @@ namespace Lab2.MatrixCalculator
                     case '*':
                         if (number != null)
                         {
-                            result_m = MatrixHandler.MulMatrixByNumber(
-                                result_m != null ? result_m : m,
-                                number.Value);
-                            number = null;
-                            m = null;
+                            try
+                            {
+                                result_m = MatrixHandler.MulMatrixByNumber(
+                                    result_m != null ? result_m : m,
+                                    number.Value);
+                                number = null;
+                                m = null;
+                            }
+                            catch (Exception e)
+                            {
+                                return MatrixHandler.ConvertStrToMatrixStr(error);
+                            }
                         }
                         else if (m != null && result_m != null)
                         {
-                            result_m = MatrixHandler.MulMatrix(result_m, m);
-                            m = null;
+                            try
+                            {
+                                result_m = MatrixHandler.MulMatrix(result_m, m);
+                                m = null;
+                            }
+                            catch (Exception e)
+                            {
+                                return MatrixHandler.ConvertStrToMatrixStr(error);
+                            }
                         }
                         else
                         {
                             return MatrixHandler.ConvertStrToMatrixStr(error);
                         }
-
                         break;
                     case '+':
                         if (m != null && result_m != null)
                         {
-                            result_m = MatrixHandler.SumMatrix(result_m, m);
-                            m = null;
+                            try
+                            {
+                                result_m = MatrixHandler.SumMatrix(result_m, m);
+                                m = null;
+                            }
+                            catch (Exception e)
+                            {
+                                return MatrixHandler.ConvertStrToMatrixStr(error);
+                            }
                         }
                         else
                         {
@@ -128,6 +148,20 @@ namespace Lab2.MatrixCalculator
 
                 operation = value[0];
                 last_input = value is "+" or "*" ? _operation : _equal;
+                
+                if (number != null)
+                {
+                    // работате только при условии, что первый воод был число,а за ним последовал ввод операции
+                    try
+                    {
+                        return MatrixHandler.ConvertStrToMatrixStr(number.ToString());
+                    }
+                    catch (Exception e)
+                    {
+                        return MatrixHandler.ConvertStrToMatrixStr(error);
+                    }
+                }
+                
                 return MatrixHandler.ConvertMatrixIntToStr(result_m);
             }
             
